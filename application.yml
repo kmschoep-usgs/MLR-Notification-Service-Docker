@@ -1,0 +1,2 @@
+keystoreLocation : ${keystoreLocation}
+keystorePassword: ${keystorePassword}
