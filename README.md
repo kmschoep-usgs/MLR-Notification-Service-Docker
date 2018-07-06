@@ -4,7 +4,6 @@ Docker configuration to deploy the MLR-Notification-Service service in a Docker 
 [![Build Status](https://travis-ci.org/USGS-CIDA/MLR-Notification-Service-Docker.svg?branch=master)](https://travis-ci.org/USGS-CIDA/MLR-Notification-Service-Docker) [![Coverage Status](https://coveralls.io/repos/github/USGS-CIDA/MLR-Notification-Service-Docker/badge.svg?branch=master)](https://coveralls.io/github/USGS-CIDA/MLR-Notification-Service-Docker?branch=master)
 
 ## Using Docker
-This docker image is designed to be used with Docker Swarm and as such it uses Docker Secrets for passing in configuration.
 
 ### Building the Image
 The docker image is built using a jar version that has been uploaded to the CIDA artifactory. The artifact version needs to be provided as follows:
