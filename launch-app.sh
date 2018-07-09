@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-if [ -n "${OAUTH_CLIENT_SECRET_PATH}" && -f ${OAUTH_CLIENT_SECRET_PATH} ]; then
+if [ -n "${OAUTH_CLIENT_SECRET_PATH}" ] && [ -f "${OAUTH_CLIENT_SECRET_PATH}" ]; then
   oauthClientSecret=$(cat ${OAUTH_CLIENT_SECRET_PATH})
 fi
 
