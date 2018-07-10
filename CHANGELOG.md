@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - tomcat-wildcard-dev.key
 - oauthClientSecret.txt
 
-### Updated
+### Changed
 - Dockerfile to match pattern set by AQCU dockerfiles
 
 ### Removed
