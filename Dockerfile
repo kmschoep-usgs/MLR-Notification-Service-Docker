@@ -10,9 +10,6 @@ RUN ["chmod", "+x", "launch-app.sh"]
 
 #Default ENV Values
 ENV serverPort=443
-ENV oauthClientId=client-id
-ENV oauthClientAccessTokenUri=https://example.gov/oauth/token
-ENV oauthClientAuthorizationUri=https://example.gov/oauth/authorize
 ENV oauthResourceTokenKeyUri=https://example.gov/oauth/token_key
 ENV oauthResourceId=resource-id
 
