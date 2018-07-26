@@ -3,21 +3,21 @@ FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:latest
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrNotification
 ENV artifact_version=0.7.0-SNAPSHOT
-RUN ./pull-from-artifactory.sh ${repo_name} gov.usgs.wma ${artifact_id} ${artifact_version} app.jar
-
-ADD launch-app.sh launch-app.sh
-RUN ["chmod", "+x", "launch-app.sh"]
-
-#Default ENV Values
-ENV serverPort=443
+ENV keystoreSSLKey=tomcat
+ENV keystoreLocation=/home/spring/localkeystore.pkcs12
+ENV TOMCAT_CERT_PATH=/home/spring/tomcat-wildcard-ssl.crt
+ENV TOMCAT_KEY_PATH=/home/spring/tomcat-wildcard-ssl.key
+ENV requireSsl=true
+ENV serverPort=8444
+ENV serverContextPath=/
 ENV oauthResourceTokenKeyUri=https://example.gov/oauth/token_key
 ENV oauthResourceId=resource-id
-
-ENV MLR_NOTIFICATION_SERVICE_PWD=fakepassword
 ENV MLR_NOTIFICATION_EMAIL_FROM=fakeperson@usgs.gov
 ENV MLR_NOTIFICATION_EMAIL_HOST=fakehost
 ENV MLR_NOTIFICATION_EMAIL_PORT=9999
-
-ENV OAUTH_CLIENT_SECRET_PATH=/oauthClientSecret.txt
-
 ENV HEALTHY_RESPONSE_CONTAINS='{"status":"UP"}'
+
+RUN ./pull-from-artifactory.sh ${repo_name} gov.usgs.wma ${artifact_id} ${artifact_version} app.jar
+
+HEALTHCHECK --interval=30s --timeout=3s \
+  CMD curl -k "https://127.0.0.1:${serverPort}${serverContextPath}${HEALTH_CHECK_ENDPOINT}" | grep -q ${HEALTHY_RESPONSE_CONTAINS} || exit 1
