@@ -2,7 +2,7 @@ FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:latest
 
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrNotification
-ENV artifact_version=0.7.0
+ENV artifact_version=0.7.1-SNAPSHOT
 ENV requireSsl=true
 ENV serverPort=8444
 ENV serverContextPath=/
