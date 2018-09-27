@@ -1,4 +1,4 @@
-FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:java8-0.0.2
+FROM cidasdpdasartip.cr.usgs.gov:8447/wma/wma-spring-boot-base:latest
 
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrNotification
