@@ -1,4 +1,4 @@
-FROM usgswma/wma-spring-boot-base:8-jre-slim
+FROM usgswma/wma-spring-boot-base:8-jre-slim-0.0.4
 
 ENV repo_name=mlr-maven-centralized
 ENV artifact_id=mlrNotification

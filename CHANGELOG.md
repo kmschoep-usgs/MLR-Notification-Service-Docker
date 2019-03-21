@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - Dockerfile to match pattern set by AQCU dockerfiles
+- kmschoep@usgs.gov - use version 0.0.4 wma-spring-boot-base docker image from dockerhub
 
 ### Removed
 - docker-entrypoint.sh
